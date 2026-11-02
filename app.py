@@ -7,7 +7,7 @@ from style import apply_theme
 apply_theme("food.png")
 
 st.title('Agaye Awara Logon')
-st.caption('Where are we eating today?')
+st.caption("Skip the debate. Fast-forward past Kababjees. We're in Hussainabad, let the bot pick!")
 
 password=st.text_input('Password', type='password')
 if password != st.secrets['APP_PASS']:
