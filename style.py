@@ -3,12 +3,11 @@ import os
 import streamlit as st
 
 
-def apply_theme(image_file=None):
+def apply_theme(image_file="food.png"):
   img_layer = ""
   if image_file and os.path.exists(image_file):
     with open(image_file, "rb") as f:
       img = base64.b64encode(f.read()).decode()
-    # Positioned nicely at center 20px so it frames the header and sits behind inputs perfectly
     img_layer = (
         f'linear-gradient(rgba(255, 251, 235, 0.70), rgba(255, 251, 235,'
         f' 0.70)), url("data:image/png;base64,{img}") center 20px / 450px auto'
@@ -34,13 +33,20 @@ def apply_theme(image_file=None):
     }}
 
     .block-container {{
-        background: {img_layer} #FFFBEB;
+        background: {img_layer} #FFFBEB !important;
         border: 4px solid #8B5E3C;
         border-radius: 16px;
         box-shadow: 6px 6px 0 #C99A6B;
         max-width: 500px;
-        margin-top: 5rem;
+        margin-top: 2rem;
         padding: 2rem 1.5rem !important;
+    }}
+
+    /* Extra top margin specifically for mobile phones */
+    @media (max-width: 768px) {{
+        .block-container {{
+            margin-top: 6rem !important;
+        }}
     }}
 
     h1, h2, h3, p, label, span, li,
@@ -49,7 +55,6 @@ def apply_theme(image_file=None):
     }}
     h1 {{ font-size: 2.2rem !important; }}
 
-    /* Make the subtitle caption clearly visible */
     .stCaption, div[data-testid="stCaptionContainer"] p {{
         color: #5A3E2B !important;
         font-weight: 600 !important;
@@ -81,7 +86,7 @@ def apply_theme(image_file=None):
         box-shadow: none !important;
     }}
 
-    /* Completely eliminate visibility text and force the eye icon */
+    /* Clean Eye Icon for Password Visibility */
     .stPassword button {{
         background: transparent !important;
         border: none !important;
