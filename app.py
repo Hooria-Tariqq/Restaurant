@@ -1,7 +1,10 @@
 import streamlit as st
 from pymongo import MongoClient
 import random
-st.set_page_config(page_title="Awara Logon", page_icon="🍕")
+import base64
+from style import apply_theme
+
+apply_theme("food.png")
 
 st.title('Agaye Awara Logon')
 st.caption('Where are we eating today?')
