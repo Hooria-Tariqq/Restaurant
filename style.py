@@ -39,7 +39,7 @@ def apply_theme(image_file=None):
         border-radius: 16px;
         box-shadow: 6px 6px 0 #C99A6B;
         max-width: 500px;
-        margin-top: 2rem;
+        margin-top: 5rem;
         padding: 2rem 1.5rem !important;
     }}
 
